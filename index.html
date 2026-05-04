@@ -71,7 +71,7 @@ button:disabled{opacity:0.5;}
 <input type="url" id="url" placeholder="https://instagram.com/yourprofile">
 
 <label id="qty-label" style="font-weight:600;color:#00f5d4;margin-top:15px;display:block;">📊 कितनी मात्रा चाहिए?</label>
-<input type="number" id="quantity" value="1000" min="1" step="1" oninput="calculatePrice()">
+<input type="number" id="quantity" value="0" min="0" step="1" oninput="calculatePrice()">
 
 <div class="price-box" id="priceDisplay">₹ 0</div>
 
@@ -83,13 +83,17 @@ button:disabled{opacity:0.5;}
 <button id="qrBtn" onclick="showQRModal()" style="background:linear-gradient(90deg,#ff6b00,#ff0055);">💳 QR कोड से भुगतान करें</button>
 <button id="waBtn" onclick="sendToWhatsApp()" disabled>📲 व्हाट्सएप पर ऑर्डर भेजो</button>
 
-<div class="lang-modal" id="qrModal">
+<div class="lang-modal hidden" id="qrModal">
 <div class="lang-content">
 <h2 id="qr-title">💳 UPI से भुगतान करें</h2>
 <p id="qr-desc" style="margin-bottom:15px;">नीचे दिया गया QR कोड स्कैन करो</p>
-<div id="qrCode" style="text-align:center;margin:20px 0;"></div>
+
+<div style="text-align:center;margin:20px 0;">
+    <img src="IMG_20260503_124410.jpg" alt="UPI QR Code" style="width: 220px; border-radius: 15px; border: 3px solid #00f5d4; box-shadow: 0 0 15px rgba(0,255,255,0.3);">
+</div>
+
 <p id="qr-direct" style="margin:15px 0;font-size:12px;">या डायरेक्ट: <strong>+91 7250728059</strong></p>
-<button onclick="closeQRModal()" style="background:#ff0055;">बंद करें</button>
+<button onclick="closeQRModal()" style="background:#ff0055; width: 100%; padding: 10px; border: none; border-radius: 8px; color: white; font-weight: bold; cursor: pointer;">बंद करें</button>
 </div>
 </div>
 
@@ -118,15 +122,13 @@ button:disabled{opacity:0.5;}
 
 <div class="popup" id="popup">किसी ने अभी ऑर्डर दिया! 🎉</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
 <script>
 const trans = {
 hi: {notice:"🔥 भारत में सबसे सस्ता Instagram पैनल - सीमित ऑफर 🔥",title:"प्रीमियम बूस्ट पैनल",subtitle:"तेजी से बढ़ो • असली यूजर्स • तुरंत डिलीवरी 🚀",serviceLabel:"📱 कौन सी सेवा चाहिए?",optViews:"👁 व्यूज ₹2/1000",optFollowers:"🔥 फॉलोवर प्रीमियम ₹199/1000",optFollowersBasic:"⭐ फॉलोवर्स ₹99/1000",optLikes:"❤️ लाइक्स ₹40/1000",urlLabel:"🔗 अपना Instagram URL डालो",qtyLabel:"📊 कितनी मात्रा चाहिए?",paidLabel:"✅ मैंने QR से भुगतान कर दिया",qrBtnText:"💳 QR कोड से भुगतान करें",waBtnText:"📲 व्हाट्सएप पर ऑर्डर भेजो",qrTitle:"💳 UPI से भुगतान करें",qrDesc:"नीचे दिया गया QR कोड स्कैन करो",qrDirect:"या डायरेक्ट: +91 7250728059",stat1:"ऑर्डर",stat2:"यूजर्स",stat3:"सपोर्ट",featuresTitle:"✨ क्यों हमसे ऑर्डर करें?",feat1:"✔️ तुरंत डिलीवरी",feat2:"✔️ सबसे सस्ती कीमत",feat3:"✔️ पासवर्ड की जरूरत नहीं",feat4:"✔️ 100% सुरक्षित 🔒",faqTitle:"❓ FAQ",faq1:"Q: कितना समय? A: मिनटों में!",faq2:"Q: सुरक्षित? A: हाँ, 100% सुरक्षित!",footer:"⚠️ यह पैनल Instagram का आधिकारिक नहीं है।"},
 en: {notice:"🔥 Cheapest Instagram Panel in India - Limited Offer 🔥",title:"Premium Boost Panel",subtitle:"Grow Fast • Real Users • Instant Delivery 🚀",serviceLabel:"📱 Which service?",optViews:"👁 Views ₹2/1000",optFollowers:"🔥 Followers Premium ₹199/1000",optFollowersBasic:"⭐ Followers ₹99/1000",optLikes:"❤️ Likes ₹40/1000",urlLabel:"🔗 Enter Instagram URL",qtyLabel:"📊 How many?",paidLabel:"✅ I paid via QR",qrBtnText:"💳 Pay via QR",waBtnText:"📲 Send Order",qrTitle:"💳 Pay via UPI",qrDesc:"Scan QR below",qrDirect:"Or: +91 7250728059",stat1:"Orders",stat2:"Users",stat3:"Support",featuresTitle:"✨ Why Us?",feat1:"✔️ Instant Delivery",feat2:"✔️ Cheapest Price",feat3:"✔️ No Password",feat4:"✔️ 100% Safe 🔒",faqTitle:"❓ FAQ",faq1:"Q: Time? A: Minutes!",faq2:"Q: Safe? A: Yes!",footer:"⚠️ Not official Instagram"},
 gu: {notice:"🔥 ભારતમાં સૌથી સસ્તો Instagram 🔥",title:"પ્રીમિયમ બુસ્ટ",subtitle:"વધો • અસલી યુઝર્સ",serviceLabel:"📱 સેવા?",optViews:"👁 વ્યુઝ",optFollowers:"🔥 ફોલોવર્સ",optFollowersBasic:"⭐ ફોલોવર્સ",optLikes:"❤️ લાઈક્સ",urlLabel:"🔗 URL",qtyLabel:"📊 કેટલું?",paidLabel:"✅ પેમેન્ટ થઈ",qrBtnText:"💳 QR પે",waBtnText:"📲 ભેજો",qrTitle:"💳 UPI",qrDesc:"QR સ્કેન",qrDirect:"નહીં તો: +91 7250728059",stat1:"ઓર્ડર",stat2:"યુઝર",stat3:"સપોર્ટ",featuresTitle:"✨ શા માટે?",feat1:"✔️ તાત્કાલિક",feat2:"✔️ સસ્તો",feat3:"✔️ પાસવર્ડ નહીં",feat4:"✔️ સુરક્ષિત 🔒",faqTitle:"❓ FAQ",faq1:"Q: સમય? A: મિનિટ!",faq2:"Q: સુરક્ષિત? A: હા!",footer:"⚠️ Instagram નહીં"},
 mr: {notice:"🔥 भारतातील सर्वस्त Instagram 🔥",title:"प्रीमियम बूस्ट",subtitle:"वाढ • खरे यूजर्स",serviceLabel:"📱 सेवा?",optViews:"👁 व्यूज",optFollowers:"🔥 फॉलोअर्स",optFollowersBasic:"⭐ फॉलोअर्स",optLikes:"❤️ लाइक्स",urlLabel:"🔗 URL",qtyLabel:"📊 किती?",paidLabel:"✅ पेमेंट थाली",qrBtnText:"💳 QR",waBtnText:"📲 पाठवा",qrTitle:"💳 UPI",qrDesc:"QR स्कॅन",qrDirect:"किंवा: +91 7250728059",stat1:"ऑर्डर",stat2:"यूजर",stat3:"सपोर्ट",featuresTitle:"✨ का?",feat1:"✔️ तात्कालिक",feat2:"✔️ सस्ता",feat3:"✔️ पासवर्ड नाही",feat4:"✔️ सुरक्षित 🔒",faqTitle:"❓ FAQ",faq1:"Q: वेळ? A: मिनिटे!",faq2:"Q: सुरक्षित? A: होय!",footer:"⚠️ Instagram नाही"},
-pa: {notice:"🔥 ਭਾਰਤ ਵਿੱਚ ਸਭ ਤੋਂ ਸਸਤਾ 🔥",title:"ਪ੍ਰੀਮੀਅਮ ਬੂਸਟ",subtitle:"ਵਧੋ • ਅਸਲ ਯੂਜ਼ਰ",serviceLabel:"📱 ਸੇਵਾ?",optViews:"👁 ਵਿਊਜ਼",optFollowers:"🔥 ਫਾਲੋਅਰ",optFollowersBasic:"⭐ ਫਾਲੋਅਰ",optLikes:"❤️ ਲਾਈਕ",urlLabel:"🔗 URL",qtyLabel:"📊 ਕਿੰਨਾ?",paidLabel:"✅ ਪੇ ਕੀਤਾ",qrBtnText:"💳 QR",waBtnText:"📲 ਭੇਜੋ",qrTitle:"💳 UPI",qrDesc:"QR ਸਕੈਨ",qrDirect:"ਨਹੀਂ ਤਾਂ: +91 7250728059",stat1:"ਆਰਡਰ",stat2:"ਯੂਜ਼ਰ",stat3:"ਸਹਾਇਤਾ",featuresTitle:"✨ ਕਿਉਂ?",feat1:"✔️ ਤਾਲੀ",feat2:"✔️ ਸਸਤਾ",feat3:"✔️ ਪਾਸ ਨਹੀਂ",feat4:"✔️ ਸੁਰੱਖਿਆ 🔒",faqTitle:"❓ FAQ",faq1:"Q: ਵੇਲਾ? A: ਮਿੰਟ!",faq2:"Q: ਸੁਰੱਖਿਆ? A: ਹਾਂ!",footer:"⚠️ Instagram ਨਹੀਂ"},
+pa: {notice:"🔥 ਭਾਰਤ ਵਿੱਚ ਸਭ ਤੋਂ ਸਸਤਾ 🔥",title:"ਪ੍ਰੀਮੀਅਮ બੂਸਟ",subtitle:"ਵਧੋ • ਅਸਲ ਯੂਜ਼ਰ",serviceLabel:"📱 ਸੇਵਾ?",optViews:"👁 ਵਿਊਜ਼",optFollowers:"🔥 ਫਾਲੋਅਰ",optFollowersBasic:"⭐ ਫਾਲੋਅਰ",optLikes:"❤️ ਲਾਈਕ",urlLabel:"🔗 URL",qtyLabel:"📊 ਕਿੰਨਾ?",paidLabel:"✅ ਪੇ ਕੀਤਾ",qrBtnText:"💳 QR",waBtnText:"📲 ਭੇਜੋ",qrTitle:"💳 UPI",qrDesc:"QR ਸਕੈਨ",qrDirect:"ਨਹੀਂ ਤਾਂ: +91 7250728059",stat1:"ਆਰਡਰ",stat2:"ਯੂਜ਼ਰ",stat3:"ਸਹਾਇਤਾ",featuresTitle:"✨ ਕਿਉਂ?",feat1:"✔️ ਤਾਲੀ",feat2:"✔️ ਸਸਤਾ",feat3:"✔️ ਪਾਸ ਨਹੀਂ",feat4:"✔️ ਸੁਰੱਖਿਆ 🔒",faqTitle:"❓ FAQ",faq1:"Q: ਵੇਲਾ? A: ਮਿੰਟ!",faq2:"Q: ਸੁਰੱਖਿਆ? A: ਹਾਂ!",footer:"⚠️ Instagram ਨਹੀਂ"},
 ta: {notice:"🔥 இந்தியாவில் மிகவும் குறைந்த விலை 🔥",title:"பிரீமியம் பூஸ்ட்",subtitle:"வளர்ந்து • உண்மையான பயனர்",serviceLabel:"📱 சேவை?",optViews:"👁 பார்வைகள்",optFollowers:"🔥 பின்தொடரியாளர்",optFollowersBasic:"⭐ பின்தொடரியாளர்",optLikes:"❤️ விருப்பங்கள்",urlLabel:"🔗 URL",qtyLabel:"📊 எவ்வளவு?",paidLabel:"✅ பணம் செலுத்தினேன்",qrBtnText:"💳 QR",waBtnText:"📲 அனுப்பு",qrTitle:"💳 UPI",qrDesc:"QR ஸ்கேன் செய்",qrDirect:"அல்லது: +91 7250728059",stat1:"ஆர்டர்",stat2:"பயனர்",stat3:"ஆதரவு",featuresTitle:"✨ ஏன்?",feat1:"✔️ உடனடி",feat2:"✔️ குறைந்த விலை",feat3:"✔️ கடவுச்சொல் இல்லை",feat4:"✔️ பாதுகாப்பு 🔒",faqTitle:"❓ FAQ",faq1:"Q: நேரம்? A: நிமிடங்கள்!",faq2:"Q: பாதுகாப்பு? A: ஆம்!",footer:"⚠️ Instagram இல்லை"}
 };
 
@@ -171,7 +173,7 @@ let currentPrice = 0;
 
 function calculatePrice() {
 let q = document.getElementById('quantity').value;
-if(q < 1) q = 1;
+if(q < 0) q = 0;
 document.getElementById('quantity').value = q;
 let s = document.getElementById('service').value;
 currentPrice = (rates[s] * q).toFixed(2);
@@ -184,11 +186,6 @@ document.getElementById('waBtn').disabled = !document.getElementById('paidCheck'
 
 function showQRModal() {
 document.getElementById('qrModal').classList.remove('hidden');
-document.getElementById('qrCode').innerHTML = '';
-new QRCode(document.getElementById('qrCode'), {
-text: 'upi://pay?pa=7250728059@okhdfcbank&pn=Boost%20Panel',
-width: 250, height: 250, colorDark: '#00f5d4', colorLight: '#111'
-});
 }
 
 function closeQRModal() {
