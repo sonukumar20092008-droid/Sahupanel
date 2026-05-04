@@ -1,50 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Page</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <!-- Include QR Code Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <title>Order Panel</title>
 </head>
 <body>
-    <button id="sendOrder">Send Order</button>
-    <div id="qrModal" style="display: none;">
-        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; border: 1px solid black; background-color: white; z-index: 1000;">
-            <h2>Payment QR Code</h2>
-            <div id="qrCode"></div>
-            <button id="closeModal">Close</button>
+    <h1>सेवा का चयन करें</h1>
+    <form id="orderForm">
+        <label for="service">सेवा:</label>
+        <select id="service" name="service" required>
+            <option value="service1">सेवा 1</option>
+            <option value="service2">सेवा 2</option>
+            <option value="service3">सेवा 3</option>
+        </select>
+
+        <label for="url">URL: </label>
+        <input type="url" id="url" name="url" required>
+
+        <label for="quantity">मात्रा: </label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <button type="button" id="calculatePrice">कीमत की गणना करें</button>
+        <div id="priceDisplay"></div>
+
+        <button type="button" id="paymentModal">QR कोड भुगतान</button>
+        <div id="qrCodeModal" style="display: none;">
+            <h2>QR कोड भुगतान</h2>
+            <img src="path/to/qr-code.png" alt="QR Code"/>
+            <button type="button" onclick="closeModal()">बंद करें</button>
         </div>
-    </div>
+
+        <button type="submit">व्हाट्सएप पर ऑर्डर करें</button>
+    </form>
 
     <script>
-        $(document).ready(function() {
-            $('#sendOrder').click(function() {
-                // Show QR code modal
-                var upiLink = 'upi:917250728059@oksbi'; // Replace with your UPI link
-                $('#qrCode').empty().qrcode(upiLink);
-                $('#qrModal').show();
-            });
-
-            $('#closeModal').click(function() {
-                $('#qrModal').hide();
-            });
+        document.getElementById('calculatePrice').addEventListener('click', function() {
+            // Price calculation logic here
+            document.getElementById('priceDisplay').innerText = 'कुल कीमत: ₹100'; // example price
         });
 
-        function sendToWhatsApp() {
-            var message = 'Order details...'; // Your order details
-            var number = '917250728059'; // WhatsApp number
-            var encodedMessage = encodeURIComponent(message);
-            window.open('https://api.whatsapp.com/send?phone=' + number + '&text=' + encodedMessage);
+        document.getElementById('paymentModal').addEventListener('click', function() {
+            document.getElementById('qrCodeModal').style.display = 'block';
+        });
+
+        function closeModal() {
+            document.getElementById('qrCodeModal').style.display = 'none';
         }
     </script>
-    <style>
-        /* Modal styles */
-        #qrModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); }
-    </style>
 </body>
 </html>
