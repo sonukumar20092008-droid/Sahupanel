@@ -37,7 +37,6 @@ button:disabled{opacity:0.5;}
 </head>
 <body>
 
-<!-- LANGUAGE MODAL - Shows on Page Load -->
 <div class="lang-modal" id="langModal">
 <div class="lang-content">
 <h2>🌍 भाषा चुनें | Select Language</h2>
@@ -72,7 +71,7 @@ button:disabled{opacity:0.5;}
 <input type="url" id="url" placeholder="https://instagram.com/yourprofile">
 
 <label id="qty-label" style="font-weight:600;color:#00f5d4;margin-top:15px;display:block;">📊 कितनी मात्रा चाहिए?</label>
-<input type="number" id="quantity" value="1000" min="1000" step="100" oninput="calculatePrice()">
+<input type="number" id="quantity" value="1000" min="1" step="1" oninput="calculatePrice()">
 
 <div class="price-box" id="priceDisplay">₹ 0</div>
 
@@ -84,7 +83,6 @@ button:disabled{opacity:0.5;}
 <button id="qrBtn" onclick="showQRModal()" style="background:linear-gradient(90deg,#ff6b00,#ff0055);">💳 QR कोड से भुगतान करें</button>
 <button id="waBtn" onclick="sendToWhatsApp()" disabled>📲 व्हाट्सएप पर ऑर्डर भेजो</button>
 
-<!-- QR MODAL -->
 <div class="lang-modal" id="qrModal">
 <div class="lang-content">
 <h2 id="qr-title">💳 UPI से भुगतान करें</h2>
@@ -173,7 +171,7 @@ let currentPrice = 0;
 
 function calculatePrice() {
 let q = document.getElementById('quantity').value;
-if(q < 1000) q = 1000;
+if(q < 1) q = 1;
 document.getElementById('quantity').value = q;
 let s = document.getElementById('service').value;
 currentPrice = (rates[s] * q).toFixed(2);
@@ -215,4 +213,4 @@ calculatePrice();
 </script>
 
 </body>
-  </html>
+</html>
