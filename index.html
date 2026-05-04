@@ -1,226 +1,218 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>प्रीमियम बूस्ट पैनल</title>
+<title>Premium Boost Panel</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-body { background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364); color: #fff; }
-.notice { background: #ff0055; text-align: center; padding: 12px; font-size: 14px; animation: scroll 10s linear infinite; font-weight: 600; }
-@keyframes scroll { 0% { letter-spacing: 1px; } 50% { letter-spacing: 3px; } 100% { letter-spacing: 1px; } }
-.navbar { padding: 15px; text-align: center; font-weight: 700; background: rgba(0,0,0,0.4); font-size: 18px; }
-.container { max-width: 500px; margin: 20px auto; padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); box-shadow: 0 0 40px rgba(0,255,255,0.15); }
-h2 { text-align: center; background: linear-gradient(90deg, #00f5d4, #9b5cff); -webkit-background-clip: text; color: transparent; margin-bottom: 10px; }
-.steps { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; margin: 15px 0; font-size: 13px; line-height: 1.8; border-left: 4px solid #00f5d4; }
-.steps h3 { color: #00f5d4; margin-bottom: 10px; }
-select, input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 10px; border: none; background: #111; color: #fff; font-size: 13px; }
-.price-box { margin: 15px 0; padding: 15px; text-align: center; border-radius: 10px; background: linear-gradient(90deg, #00f5d4, #9b5cff); color: #000; font-weight: bold; font-size: 18px; }
-button { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 10px; font-weight: bold; background: linear-gradient(90deg, #00f5d4, #9b5cff); cursor: pointer; color: #000; font-size: 14px; transition: 0.3s; }
-button:hover:not(:disabled) { transform: scale(1.02); }
-button:disabled { opacity: 0.5; cursor: not-allowed; }
-.checkbox-label { display: flex; align-items: center; margin: 10px 0; font-size: 14px; }
-.checkbox-label input { width: auto; margin-right: 10px; }
-.stats { display: flex; justify-content: space-around; margin: 20px 0; text-align: center; }
-.stat-box { flex: 1; background: #111; padding: 15px; border-radius: 10px; margin: 5px; }
-.stat-box h3 { color: #00f5d4; }
-.features { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; margin: 15px 0; font-size: 13px; line-height: 2; }
-.qr-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; }
-.qr-content { background: #111; padding: 30px; border-radius: 15px; text-align: center; border: 2px solid #00f5d4; max-width: 400px; }
-.qr-content h2 { margin-bottom: 20px; }
-#qrCode { margin: 20px 0; }
-.close-qr { background: #ff0055 !important; margin-top: 15px; }
-.faq { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; margin: 15px 0; font-size: 13px; }
-.faq h3 { color: #00f5d4; margin-bottom: 10px; }
-.footer { text-align: center; font-size: 12px; opacity: 0.7; margin-top: 20px; }
-.popup { position: fixed; bottom: 20px; right: 20px; background: #111; padding: 12px; border-radius: 8px; font-size: 12px; border: 1px solid #00f5d4; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:radial-gradient(circle at top,#0f2027,#203a43,#2c5364);color:#fff;}
+.notice{background:#ff0055;text-align:center;padding:8px;font-size:13px;animation:scroll 10s linear infinite;}
+@keyframes scroll{0%{letter-spacing:1px;}50%{letter-spacing:3px;}100%{letter-spacing:1px;}}
+.navbar{padding:15px;text-align:center;font-weight:600;background:rgba(0,0,0,0.4);}
+.container{max-width:420px;margin:20px auto;padding:25px;border-radius:20px;background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);box-shadow:0 0 40px rgba(0,255,255,0.15);}
+h2{text-align:center;background:linear-gradient(90deg,#00f5d4,#9b5cff);-webkit-background-clip:text;color:transparent;}
+select,input{width:100%;padding:12px;margin-top:12px;border-radius:10px;border:none;background:#111;color:#fff;}
+.price-box{margin-top:15px;padding:12px;text-align:center;border-radius:10px;background:linear-gradient(90deg,#00f5d4,#9b5cff);color:#000;font-weight:bold;}
+button{width:100%;padding:12px;margin-top:15px;border:none;border-radius:10px;font-weight:bold;background:linear-gradient(90deg,#00f5d4,#9b5cff);cursor:pointer;}
+button:disabled{opacity:0.5;}
+.section{margin-top:20px;font-size:13px;line-height:1.6;}
+.stats{display:flex;justify-content:space-between;margin-top:20px;text-align:center;}
+.stat-box{flex:1;background:#111;margin:5px;padding:10px;border-radius:10px;}
+.cards{display:flex;flex-wrap:wrap;margin-top:15px;}
+.card{width:48%;margin:1%;background:#111;padding:10px;border-radius:10px;text-align:center;font-size:12px;}
+.faq{margin-top:20px;}
+.faq p{margin-top:5px;font-size:12px;opacity:0.8;}
+.popup{position:fixed;bottom:20px;left:20px;background:#111;padding:10px;border-radius:8px;font-size:13px;}
+.footer{text-align:center;font-size:12px;opacity:0.7;margin-top:20px;}
+.lang-modal{display:flex;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;}
+.lang-modal.hidden{display:none;}
+.lang-content{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:50px 40px;border-radius:20px;text-align:center;border:3px solid #00f5d4;max-width:600px;box-shadow:0 0 60px rgba(0,255,255,0.4);}
+.lang-content h2{margin-bottom:30px;font-size:28px;background:linear-gradient(90deg,#00f5d4,#9b5cff);-webkit-background-clip:text;color:transparent;}
+.lang-buttons{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:20px;}
+.lang-btn{padding:15px 20px;border:2px solid #00f5d4;background:rgba(0,255,255,0.1);color:#fff;font-weight:700;border-radius:12px;cursor:pointer;font-size:16px;transition:0.3s;}
+.lang-btn:hover{background:#00f5d4;color:#000;transform:scale(1.05);}
 </style>
 </head>
 <body>
 
-<div class="notice">🔥 भारत में सबसे सस्ता Instagram पैनल - सीमित ऑफर 🔥</div>
+<!-- LANGUAGE MODAL - Shows on Page Load -->
+<div class="lang-modal" id="langModal">
+<div class="lang-content">
+<h2>🌍 भाषा चुनें | Select Language</h2>
+<p style="margin-bottom:20px;opacity:0.9;">अपनी पसंदीदा भाषा चुनें | Choose your preferred language</p>
+<div class="lang-buttons">
+<button class="lang-btn" onclick="setLang('hi')">🇮🇳 हिंदी</button>
+<button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+<button class="lang-btn" onclick="setLang('gu')">ગુજરાતી</button>
+<button class="lang-btn" onclick="setLang('mr')">मराठी</button>
+<button class="lang-btn" onclick="setLang('pa')">ਪੰਜਾਬੀ</button>
+<button class="lang-btn" onclick="setLang('ta')">தமிழ்</button>
+</div>
+</div>
+</div>
+
+<div class="notice" id="notice">🔥 भारत में सबसे सस्ता Instagram पैनल - सीमित ऑफर 🔥</div>
 <div class="navbar">🚀 बूस्ट इंडिया पैनल</div>
 
 <div class="container">
-<h2>प्रीमियम बूस्ट पैनल</h2>
-<p style="text-align: center; font-size: 13px; opacity: 0.9; margin-bottom: 15px;">
-तेजी से बढ़ो • असली यूजर्स • तुरंत डिलीवरी 🚀
-</p>
+<h2 id="title">प्रीमियम बूस्ट पैनल</h2>
+<p id="subtitle" style="text-align:center;font-size:13px;opacity:0.8;">तेजी से बढ़ो • असली यूजर्स • तुरंत डिलीवरी 🚀</p>
 
-<!-- STEP BY STEP GUIDE -->
-<div class="steps">
-<h3>📋 कैसे ऑर्डर करें? (4 आसान स्टेप)</h3>
-<strong>स्टेप 1:</strong> नीचे सेवा चुनो (Followers, Likes, Views)<br>
-<strong>स्टेप 2:</strong> अपना Instagram URL डालो<br>
-<strong>स्टेप 3:</strong> मात्रा चुनो और कीमत देखो<br>
-<strong>स्टेप 4:</strong> QR से भुगतान करो → WhatsApp से ऑर्डर भेजो ✅
-</div>
-
-<!-- SERVICE SELECTION -->
-<label style="font-weight: 600; color: #00f5d4;">📱 कौन सी सेवा चाहिए?</label>
+<label id="service-label" style="font-weight:600;color:#00f5d4;">📱 कौन सी सेवा चाहिए?</label>
 <select id="service" onchange="calculatePrice()">
-<option value="views">👁 व्यूज ₹2/1000</option>
-<option value="followers">🔥 फॉलोवर प्रीमियम ₹199/1000</option>
-<option value="followers_basic">⭐ फॉलोवर्स ₹99/1000</option>
-<option value="likes">❤️ लाइक्स ₹40/1000</option>
+<option value="views" id="opt-views">👁 व्यूज ₹2/1000</option>
+<option value="followers" id="opt-followers">🔥 फॉलोवर प्रीमियम ₹199/1000</option>
+<option value="followers_basic" id="opt-followers-basic">⭐ फॉलोवर्स ₹99/1000</option>
+<option value="likes" id="opt-likes">❤️ लाइक्स ₹40/1000</option>
 </select>
 
-<!-- URL INPUT -->
-<label style="font-weight: 600; color: #00f5d4;">🔗 अपना Instagram URL डालो</label>
+<label id="url-label" style="font-weight:600;color:#00f5d4;margin-top:15px;display:block;">🔗 अपना Instagram URL डालो</label>
 <input type="url" id="url" placeholder="https://instagram.com/yourprofile">
 
-<!-- QUANTITY INPUT -->
-<label style="font-weight: 600; color: #00f5d4;">📊 कितनी मात्रा चाहिए?</label>
+<label id="qty-label" style="font-weight:600;color:#00f5d4;margin-top:15px;display:block;">📊 कितनी मात्रा चाहिए?</label>
 <input type="number" id="quantity" value="1000" min="1000" step="100" oninput="calculatePrice()">
 
-<!-- PRICE DISPLAY -->
 <div class="price-box" id="priceDisplay">₹ 0</div>
 
-<!-- PAYMENT CHECKBOX -->
-<div class="checkbox-label">
+<div style="display:flex;align-items:center;margin:10px 0;">
 <input type="checkbox" id="paidCheck" onchange="togglePaidState()">
-<label for="paidCheck">✅ मैंने QR से भुगतान कर दिया</label>
+<label for="paidCheck" id="paid-label" style="margin-left:10px;">✅ मैंने QR से भुगतान कर दिया</label>
 </div>
 
-<!-- PAYMENT QR BUTTON -->
-<button id="qrBtn" onclick="showQRModal()" style="background: linear-gradient(90deg, #ff6b00, #ff0055);">💳 QR कोड से भुगतान करें</button>
-
-<!-- WHATSAPP SEND BUTTON -->
+<button id="qrBtn" onclick="showQRModal()" style="background:linear-gradient(90deg,#ff6b00,#ff0055);">💳 QR कोड से भुगतान करें</button>
 <button id="waBtn" onclick="sendToWhatsApp()" disabled>📲 व्हाट्सएप पर ऑर्डर भेजो</button>
 
 <!-- QR MODAL -->
-<div class="qr-modal" id="qrModal">
-<div class="qr-content">
-<h2>💳 UPI से भुगतान करें</h2>
-<p style="margin-bottom: 15px; font-size: 13px;">नीचे दिया गया QR कोड स्कैन करो या डायरेक्ट कॉल करो</p>
-<div id="qrCode"></div>
-<p style="margin: 15px 0; font-size: 12px; opacity: 0.8;">या डायरेक्ट: <strong>+91 7250728059</strong></p>
-<button onclick="closeQRModal()" class="close-qr">बंद करें</button>
+<div class="lang-modal" id="qrModal">
+<div class="lang-content">
+<h2 id="qr-title">💳 UPI से भुगतान करें</h2>
+<p id="qr-desc" style="margin-bottom:15px;">नीचे दिया गया QR कोड स्कैन करो</p>
+<div id="qrCode" style="text-align:center;margin:20px 0;"></div>
+<p id="qr-direct" style="margin:15px 0;font-size:12px;">या डायरेक्ट: <strong>+91 7250728059</strong></p>
+<button onclick="closeQRModal()" style="background:#ff0055;">बंद करें</button>
 </div>
 </div>
 
-<!-- STATS -->
 <div class="stats">
-<div class="stat-box">
-<h3>1200+</h3>
-<p style="font-size: 12px;">ऑर्डर</p>
-</div>
-<div class="stat-box">
-<h3>800+</h3>
-<p style="font-size: 12px;">यूजर्स</p>
-</div>
-<div class="stat-box">
-<h3>24/7</h3>
-<p style="font-size: 12px;">सपोर्ट</p>
-</div>
+<div class="stat-box"><h3>1200+</h3><p id="stat1">ऑर्डर</p></div>
+<div class="stat-box"><h3>800+</h3><p id="stat2">यूजर्स</p></div>
+<div class="stat-box"><h3>24/7</h3><p id="stat3">सपोर्ट</p></div>
 </div>
 
-<!-- FEATURES -->
-<div class="features">
-<h3>✨ क्यों हमसे ऑर्डर करें?</h3>
-✔️ तुरंत डिलीवरी (मिनटों में शुरू)<br>
-✔️ सबसे सस्ती कीमत<br>
-✔️ पासवर्ड की जरूरत नहीं<br>
-✔️ 100% सुरक्षित और विश्वसनीय 🔒<br>
-✔️ असली फॉलोवर्स और लाइक्स<br>
-✔️ 24/7 कस्टमर सपोर्ट
+<div class="section">
+<h3 id="features-title">✨ क्यों हमसे ऑर्डर करें?</h3>
+<span id="feat1">✔️ तुरंत डिलीवरी</span><br>
+<span id="feat2">✔️ सबसे सस्ती कीमत</span><br>
+<span id="feat3">✔️ पासवर्ड की जरूरत नहीं</span><br>
+<span id="feat4">✔️ 100% सुरक्षित 🔒</span>
 </div>
 
-<!-- FAQ -->
 <div class="faq">
-<h3>❓ अक्सर पूछे जाने वाले सवाल</h3>
-<p><b>Q:</b> कितना समय लगता है?<br>
-<b>A:</b> मिनटों में शुरू हो जाता है! 🚀</p>
-<p style="margin-top: 10px;"><b>Q:</b> क्या यह सुरक्षित है?<br>
-<b>A:</b> हाँ! कोई पासवर्ड नहीं देना पड़ता। 100% सुरक्षित!</p>
-<p style="margin-top: 10px;"><b>Q:</b> फॉलोवर्स असली होंगे?<br>
-<b>A:</b> हाँ, 100% असली एक्टिव यूजर्स!</p>
+<h3 id="faq-title">❓ FAQ</h3>
+<p id="faq1"><b>Q:</b> कितना समय? <b>A:</b> मिनटों में!</p>
+<p id="faq2"><b>Q:</b> सुरक्षित? <b>A:</b> हाँ, 100% सुरक्षित!</p>
 </div>
 
-<!-- REVIEWS -->
-<div style="background: rgba(0,0,0,0.3); padding: 15px; border-radius: 10px; margin: 15px 0; font-size: 13px;">
-<h3 style="color: #00f5d4; margin-bottom: 10px;">⭐ खुश ग्राहकों के रिव्यू</h3>
-⭐ "बेहतरीन पैनल! सस्ता और तेज 🔥" – राहुल<br>
-⭐ "गजब! सब कुछ सही काम किया 💯" – अमन<br>
-⭐ "बेस्ट सर्विस, हमेशा यहीं से लूँगा ✨" – प्रिया
+<div class="footer" id="footer">⚠️ यह पैनल Instagram का आधिकारिक नहीं है।</div>
 </div>
 
-<div class="footer">
-⚠️ यह पैनल Instagram का आधिकारिक नहीं है।
-</div>
-</div>
-
-<!-- NOTIFICATION POPUP -->
 <div class="popup" id="popup">किसी ने अभी ऑर्डर दिया! 🎉</div>
 
-<!-- QR CODE LIBRARY -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
-const rates = {
-views: 2 / 1000,
-followers: 199 / 1000,
-followers_basic: 99 / 1000,
-likes: 40 / 1000
+const trans = {
+hi: {notice:"🔥 भारत में सबसे सस्ता Instagram पैनल - सीमित ऑफर 🔥",title:"प्रीमियम बूस्ट पैनल",subtitle:"तेजी से बढ़ो • असली यूजर्स • तुरंत डिलीवरी 🚀",serviceLabel:"📱 कौन सी सेवा चाहिए?",optViews:"👁 व्यूज ₹2/1000",optFollowers:"🔥 फॉलोवर प्रीमियम ₹199/1000",optFollowersBasic:"⭐ फॉलोवर्स ₹99/1000",optLikes:"❤️ लाइक्स ₹40/1000",urlLabel:"🔗 अपना Instagram URL डालो",qtyLabel:"📊 कितनी मात्रा चाहिए?",paidLabel:"✅ मैंने QR से भुगतान कर दिया",qrBtnText:"💳 QR कोड से भुगतान करें",waBtnText:"📲 व्हाट्सएप पर ऑर्डर भेजो",qrTitle:"💳 UPI से भुगतान करें",qrDesc:"नीचे दिया गया QR कोड स्कैन करो",qrDirect:"या डायरेक्ट: +91 7250728059",stat1:"ऑर्डर",stat2:"यूजर्स",stat3:"सपोर्ट",featuresTitle:"✨ क्यों हमसे ऑर्डर करें?",feat1:"✔️ तुरंत डिलीवरी",feat2:"✔️ सबसे सस्ती कीमत",feat3:"✔️ पासवर्ड की जरूरत नहीं",feat4:"✔️ 100% सुरक्षित 🔒",faqTitle:"❓ FAQ",faq1:"Q: कितना समय? A: मिनटों में!",faq2:"Q: सुरक्षित? A: हाँ, 100% सुरक्षित!",footer:"⚠️ यह पैनल Instagram का आधिकारिक नहीं है।"},
+en: {notice:"🔥 Cheapest Instagram Panel in India - Limited Offer 🔥",title:"Premium Boost Panel",subtitle:"Grow Fast • Real Users • Instant Delivery 🚀",serviceLabel:"📱 Which service?",optViews:"👁 Views ₹2/1000",optFollowers:"🔥 Followers Premium ₹199/1000",optFollowersBasic:"⭐ Followers ₹99/1000",optLikes:"❤️ Likes ₹40/1000",urlLabel:"🔗 Enter Instagram URL",qtyLabel:"📊 How many?",paidLabel:"✅ I paid via QR",qrBtnText:"💳 Pay via QR",waBtnText:"📲 Send Order",qrTitle:"💳 Pay via UPI",qrDesc:"Scan QR below",qrDirect:"Or: +91 7250728059",stat1:"Orders",stat2:"Users",stat3:"Support",featuresTitle:"✨ Why Us?",feat1:"✔️ Instant Delivery",feat2:"✔️ Cheapest Price",feat3:"✔️ No Password",feat4:"✔️ 100% Safe 🔒",faqTitle:"❓ FAQ",faq1:"Q: Time? A: Minutes!",faq2:"Q: Safe? A: Yes!",footer:"⚠️ Not official Instagram"},
+gu: {notice:"🔥 ભારતમાં સૌથી સસ્તો Instagram 🔥",title:"પ્રીમિયમ બુસ્ટ",subtitle:"વધો • અસલી યુઝર્સ",serviceLabel:"📱 સેવા?",optViews:"👁 વ્યુઝ",optFollowers:"🔥 ફોલોવર્સ",optFollowersBasic:"⭐ ફોલોવર્સ",optLikes:"❤️ લાઈક્સ",urlLabel:"🔗 URL",qtyLabel:"📊 કેટલું?",paidLabel:"✅ પેમેન્ટ થઈ",qrBtnText:"💳 QR પે",waBtnText:"📲 ભેજો",qrTitle:"💳 UPI",qrDesc:"QR સ્કેન",qrDirect:"નહીં તો: +91 7250728059",stat1:"ઓર્ડર",stat2:"યુઝર",stat3:"સપોર્ટ",featuresTitle:"✨ શા માટે?",feat1:"✔️ તાત્કાલિક",feat2:"✔️ સસ્તો",feat3:"✔️ પાસવર્ડ નહીં",feat4:"✔️ સુરક્ષિત 🔒",faqTitle:"❓ FAQ",faq1:"Q: સમય? A: મિનિટ!",faq2:"Q: સુરક્ષિત? A: હા!",footer:"⚠️ Instagram નહીં"},
+mr: {notice:"🔥 भारतातील सर्वस्त Instagram 🔥",title:"प्रीमियम बूस्ट",subtitle:"वाढ • खरे यूजर्स",serviceLabel:"📱 सेवा?",optViews:"👁 व्यूज",optFollowers:"🔥 फॉलोअर्स",optFollowersBasic:"⭐ फॉलोअर्स",optLikes:"❤️ लाइक्स",urlLabel:"🔗 URL",qtyLabel:"📊 किती?",paidLabel:"✅ पेमेंट थाली",qrBtnText:"💳 QR",waBtnText:"📲 पाठवा",qrTitle:"💳 UPI",qrDesc:"QR स्कॅन",qrDirect:"किंवा: +91 7250728059",stat1:"ऑर्डर",stat2:"यूजर",stat3:"सपोर्ट",featuresTitle:"✨ का?",feat1:"✔️ तात्कालिक",feat2:"✔️ सस्ता",feat3:"✔️ पासवर्ड नाही",feat4:"✔️ सुरक्षित 🔒",faqTitle:"❓ FAQ",faq1:"Q: वेळ? A: मिनिटे!",faq2:"Q: सुरक्षित? A: होय!",footer:"⚠️ Instagram नाही"},
+pa: {notice:"🔥 ਭਾਰਤ ਵਿੱਚ ਸਭ ਤੋਂ ਸਸਤਾ 🔥",title:"ਪ੍ਰੀਮੀਅਮ ਬੂਸਟ",subtitle:"ਵਧੋ • ਅਸਲ ਯੂਜ਼ਰ",serviceLabel:"📱 ਸੇਵਾ?",optViews:"👁 ਵਿਊਜ਼",optFollowers:"🔥 ਫਾਲੋਅਰ",optFollowersBasic:"⭐ ਫਾਲੋਅਰ",optLikes:"❤️ ਲਾਈਕ",urlLabel:"🔗 URL",qtyLabel:"📊 ਕਿੰਨਾ?",paidLabel:"✅ ਪੇ ਕੀਤਾ",qrBtnText:"💳 QR",waBtnText:"📲 ਭੇਜੋ",qrTitle:"💳 UPI",qrDesc:"QR ਸਕੈਨ",qrDirect:"ਨਹੀਂ ਤਾਂ: +91 7250728059",stat1:"ਆਰਡਰ",stat2:"ਯੂਜ਼ਰ",stat3:"ਸਹਾਇਤਾ",featuresTitle:"✨ ਕਿਉਂ?",feat1:"✔️ ਤਾਲੀ",feat2:"✔️ ਸਸਤਾ",feat3:"✔️ ਪਾਸ ਨਹੀਂ",feat4:"✔️ ਸੁਰੱਖਿਆ 🔒",faqTitle:"❓ FAQ",faq1:"Q: ਵੇਲਾ? A: ਮਿੰਟ!",faq2:"Q: ਸੁਰੱਖਿਆ? A: ਹਾਂ!",footer:"⚠️ Instagram ਨਹੀਂ"},
+ta: {notice:"🔥 இந்தியாவில் மிகவும் குறைந்த விலை 🔥",title:"பிரீமியம் பூஸ்ட்",subtitle:"வளர்ந்து • உண்மையான பயனர்",serviceLabel:"📱 சேவை?",optViews:"👁 பார்வைகள்",optFollowers:"🔥 பின்தொடரியாளர்",optFollowersBasic:"⭐ பின்தொடரியாளர்",optLikes:"❤️ விருப்பங்கள்",urlLabel:"🔗 URL",qtyLabel:"📊 எவ்வளவு?",paidLabel:"✅ பணம் செலுத்தினேன்",qrBtnText:"💳 QR",waBtnText:"📲 அனுப்பு",qrTitle:"💳 UPI",qrDesc:"QR ஸ்கேன் செய்",qrDirect:"அல்லது: +91 7250728059",stat1:"ஆர்டர்",stat2:"பயனர்",stat3:"ஆதரவு",featuresTitle:"✨ ஏன்?",feat1:"✔️ உடனடி",feat2:"✔️ குறைந்த விலை",feat3:"✔️ கடவுச்சொல் இல்லை",feat4:"✔️ பாதுகாப்பு 🔒",faqTitle:"❓ FAQ",faq1:"Q: நேரம்? A: நிமிடங்கள்!",faq2:"Q: பாதுகாப்பு? A: ஆம்!",footer:"⚠️ Instagram இல்லை"}
 };
 
+let currentLang = 'hi';
+
+function setLang(lang) {
+currentLang = lang;
+const t = trans[lang];
+document.getElementById('notice').innerText = t.notice;
+document.getElementById('title').innerText = t.title;
+document.getElementById('subtitle').innerText = t.subtitle;
+document.getElementById('service-label').innerText = t.serviceLabel;
+document.getElementById('opt-views').innerText = t.optViews;
+document.getElementById('opt-followers').innerText = t.optFollowers;
+document.getElementById('opt-followers-basic').innerText = t.optFollowersBasic;
+document.getElementById('opt-likes').innerText = t.optLikes;
+document.getElementById('url-label').innerText = t.urlLabel;
+document.getElementById('qty-label').innerText = t.qtyLabel;
+document.getElementById('paid-label').innerText = t.paidLabel;
+document.getElementById('qrBtn').innerText = t.qrBtnText;
+document.getElementById('waBtn').innerText = t.waBtnText;
+document.getElementById('qr-title').innerText = t.qrTitle;
+document.getElementById('qr-desc').innerText = t.qrDesc;
+document.getElementById('qr-direct').innerText = t.qrDirect;
+document.getElementById('stat1').innerText = t.stat1;
+document.getElementById('stat2').innerText = t.stat2;
+document.getElementById('stat3').innerText = t.stat3;
+document.getElementById('features-title').innerText = t.featuresTitle;
+document.getElementById('feat1').innerText = t.feat1;
+document.getElementById('feat2').innerText = t.feat2;
+document.getElementById('feat3').innerText = t.feat3;
+document.getElementById('feat4').innerText = t.feat4;
+document.getElementById('faq-title').innerText = t.faqTitle;
+document.getElementById('faq1').innerText = t.faq1;
+document.getElementById('faq2').innerText = t.faq2;
+document.getElementById('footer').innerText = t.footer;
+document.getElementById('langModal').classList.add('hidden');
+}
+
+const rates = {views:2/1000, followers:199/1000, followers_basic:99/1000, likes:40/1000};
 let currentPrice = 0;
-let paymentDone = false;
 
 function calculatePrice() {
 let q = document.getElementById('quantity').value;
-if (q < 1000) q = 1000;
+if(q < 1000) q = 1000;
 document.getElementById('quantity').value = q;
-
 let s = document.getElementById('service').value;
 currentPrice = (rates[s] * q).toFixed(2);
 document.getElementById('priceDisplay').innerText = "₹ " + currentPrice;
 }
 
 function togglePaidState() {
-paymentDone = document.getElementById('paidCheck').checked;
-document.getElementById('waBtn').disabled = !paymentDone;
+document.getElementById('waBtn').disabled = !document.getElementById('paidCheck').checked;
 }
 
 function showQRModal() {
-document.getElementById('qrModal').style.display = 'flex';
+document.getElementById('qrModal').classList.remove('hidden');
 document.getElementById('qrCode').innerHTML = '';
 new QRCode(document.getElementById('qrCode'), {
 text: 'upi://pay?pa=7250728059@okhdfcbank&pn=Boost%20Panel',
-width: 250,
-height: 250,
-colorDark: '#00f5d4',
-colorLight: '#111'
+width: 250, height: 250, colorDark: '#00f5d4', colorLight: '#111'
 });
 }
 
 function closeQRModal() {
-document.getElementById('qrModal').style.display = 'none';
+document.getElementById('qrModal').classList.add('hidden');
 }
 
 function sendToWhatsApp() {
-let service = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
-let url = document.getElementById('url').value;
-let quantity = document.getElementById('quantity').value;
-
-let message = `🎉 *नमस्ते!* 🎉%0A%0A📱 मुझे यह सेवा चाहिए:%0A${service}%0A%0A📊 मात्रा: ${quantity}%0A%0A🔗 URL: ${url}%0A%0A💰 कुल कीमत: ₹${currentPrice}%0A%0A✅ मैंने भुगतान कर दिया है।%0A%0A कृपया मेरा ऑर्डर प्रोसेस करें। 🚀`;
-
-window.open(`https://wa.me/917250728059?text=${message}`);
+let s = document.getElementById('service').options[document.getElementById('service').selectedIndex].text;
+let u = document.getElementById('url').value;
+let q = document.getElementById('quantity').value;
+let msg = `Order:%0A${s}%0AQty:${q}%0AURL:${u}%0AAmount:₹${currentPrice}`;
+window.open(`https://wa.me/917250728059?text=${msg}`);
 }
 
-// Random order notifications
 setInterval(() => {
-let names = ["राहुल", "अमन", "प्रिया", "नेहा", "विजय", "सुनीता"];
-let services = ["फॉलोवर्स", "लाइक्स", "व्यूज"];
-let quantities = ["5000", "10000", "2000", "3000"];
-
-document.getElementById('popup').innerText = `✨ ${names[Math.floor(Math.random() * names.length)]} ने अभी ${quantities[Math.floor(Math.random() * quantities.length)]} ${services[Math.floor(Math.random() * services.length)]} का ऑर्डर दिया!`;
+let names = ["राहुल","अमन","प्रिया"];
+let services = ["फॉलोवर्स","लाइक्स","व्यूज"];
+document.getElementById('popup').innerText = `${names[Math.floor(Math.random()*names.length)]} ने अभी ऑर्डर दिया!`;
 }, 4000);
 
-// Initialize price on load
 calculatePrice();
 </script>
 
 </body>
-</html>
+  </html>
