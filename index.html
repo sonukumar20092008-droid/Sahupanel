@@ -13,7 +13,7 @@ body{background:radial-gradient(circle at top,#0f2027,#203a43,#2c5364);color:#ff
 
 .navbar{padding:20px;text-align:center;font-weight:700;font-size: 22px; background:rgba(0,0,0,0.4); text-transform: uppercase; letter-spacing: 2px;}
 
-.container{max-width:520px;margin:35px auto;padding:35px;border-radius:25px;background:rgba(255,255,255,0.06);backdrop-filter:blur(25px);box-shadow:0 0 50px rgba(0,255,255,0.15), inset 0 0 10px rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);}
+.container{max-width:520px;margin:35px auto;padding:35px;border-radius:25px;background:rgba(255,255,255,0.06);backdrop-filter:blur(25px);box-shadow:0 0 50px rgba(0,255,255,0.15), inset 0 0 10px rgba(0,255,255,0.05);}
 
 h2{text-align:center;font-size: 32px; background:linear-gradient(90deg,#00f5d4,#9b5cff);-webkit-background-clip:text;color:transparent;}
 
@@ -22,9 +22,9 @@ select:focus, input:focus {outline: none; border: 1px solid #00f5d4; box-shadow:
 
 label {font-size: 16px; margin-top: 22px !important; display: block; letter-spacing: 0.5px;}
 
-.price-box{margin-top:20px;padding:18px;text-align:center;border-radius:15px;background:linear-gradient(90deg,#00f5d4,#9b5cff);color:#000;font-weight:800; font-size: 26px; box-shadow: 0 5px 15px rgba(0,245,212,0.3);}
+.price-box{margin-top:20px;padding:18px;text-align:center;border-radius:15px;background:linear-gradient(90deg,#00f5d4,#9b5cff);color:#000;font-weight:800; font-size: 26px; box-shadow: 0 5px 15px rgba(155,92,255,0.3);}
 
-button{width:100%;padding:16px;margin-top:20px;border:none;border-radius:12px;font-weight:bold;font-size: 18px; background:linear-gradient(90deg,#00f5d4,#9b5cff);cursor:pointer; transition: 0.3s; text-transform: uppercase;}
+button{width:100%;padding:16px;margin-top:20px;border:none;border-radius:12px;font-weight:bold;font-size: 18px; background:linear-gradient(90deg,#00f5d4,#9b5cff);cursor:pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,245,212,0.2);}
 button:hover{transform: scale(1.02); box-shadow: 0 5px 15px rgba(155,92,255,0.4);}
 button:disabled{opacity:0.5; cursor: not-allowed; transform: none; box-shadow: none;}
 
@@ -43,13 +43,14 @@ button:disabled{opacity:0.5; cursor: not-allowed; transform: none; box-shadow: n
 .faq p{margin-top:8px;font-size:14px;opacity:0.9;}
 
 /* POPUP FIX: Right side, More Transparent, Even Smaller */
-.popup{position:fixed;bottom:10px; right:10px; /* CHANGED: Moved to Right */ background:rgba(17,17,17,0.5); /* CHANGED: More transparent (Halka) */ backdrop-filter:blur(5px);padding:6px 12px; /* CHANGED: Smaller padding */ border-radius:8px;font-size:11px; /* CHANGED: Smaller font size */ box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-left: 2px solid #00f5d4; font-weight: 600; z-index: 1000;}
+.popup{position:fixed;bottom:10px; right:10px; /* CHANGED: Moved to Right */ background:rgba(17,17,17,0.5); /* CHANGED: More transparent (Halka) */ backdrop-filter:blur(5px);padding:6px 12px; /* CHANGED: Smaller padding */ border-radius:8px;font-size:12px;z-index:9999;animation:popupSlide 0.5s ease-out;}
+@keyframes popupSlide {from {transform: translateX(400px); opacity: 0;} to {transform: translateX(0); opacity: 1;}}
 
 .footer{text-align:center;font-size:14px;opacity:0.7;margin-top:30px;}
 
 .lang-modal{display:flex;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;}
 .lang-modal.hidden{display:none;}
-.lang-content{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:50px 40px;border-radius:25px;text-align:center;border:3px solid #00f5d4;max-width:600px; width: 90%; box-shadow:0 0 60px rgba(0,255,255,0.4);}
+.lang-content{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:50px 40px;border-radius:25px;text-align:center;border:3px solid #00f5d4;max-width:600px; width: 90%; box-shadow:0 0 60px rgba(0,255,255,0.3);}
 .lang-content h2{margin-bottom:30px;font-size:32px;}
 .lang-buttons{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:20px;}
 .lang-btn{padding:15px 20px;border:2px solid #00f5d4;background:rgba(0,255,255,0.1);color:#fff;font-weight:700;border-radius:12px;cursor:pointer;font-size:18px;transition:0.3s; margin-top: 0;}
@@ -81,7 +82,7 @@ button:disabled{opacity:0.5; cursor: not-allowed; transform: none; box-shadow: n
 <p id="subtitle" style="text-align:center;font-size:15px;opacity:0.8; margin-top: 5px;">तेजी से बढ़ो • असली यूजर्स • तुरंत डिलीवरी 🚀</p>
 
 <div style="text-align: center; margin-top: 30px; margin-bottom: 10px;">
-    <img id="dynamic-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Platform Logo" style="width: 85px; height: 85px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(255,255,255,0.4)); transition: 0.4s ease-in-out;">
+    <img id="dynamic-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Platform Logo" style="width: 85px; height: 85px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0,255,255,0.4));">
 </div>
 
 <label id="platform-label" style="font-weight:600;color:#00f5d4;">🌐 कौन सा प्लेटफार्म?</label>
@@ -116,11 +117,11 @@ button:disabled{opacity:0.5; cursor: not-allowed; transform: none; box-shadow: n
 <p id="qr-desc" style="margin-bottom:15px; font-size: 16px;">नीचे दिया गया QR कोड स्कैन करो</p>
 
 <div style="text-align:center;margin:25px 0;">
-    <img src="IMG_20260503_124410.jpg" alt="UPI QR Code" style="width: 250px; border-radius: 20px; border: 4px solid #00f5d4; box-shadow: 0 0 25px rgba(0,255,255,0.4);">
+    <img src="IMG_20260727_210321.jpg" alt="UPI QR Code" style="width: 250px; border-radius: 20px; border: 4px solid #00f5d4; box-shadow: 0 0 25px rgba(0,255,255,0.4);">
 </div>
 
 <p id="qr-direct" style="margin:20px 0;font-size:16px;">या डायरेक्ट: <strong style="color: #00f5d4; font-size: 18px;">+91 7250728059</strong></p>
-<button onclick="closeQRModal()" style="background:#ff0055; width: 100%; padding: 15px; border: none; border-radius: 12px; color: white; font-weight: bold; cursor: pointer; font-size: 18px;">बंद करें</button>
+<button onclick="closeQRModal()" style="background:#ff0055; width: 100%; padding: 15px; border: none; border-radius: 12px; color: white; font-weight: bold; cursor: pointer; font-size: 18px;">बंद करो</button>
 </div>
 </div>
 
@@ -145,7 +146,7 @@ button:disabled{opacity:0.5; cursor: not-allowed; transform: none; box-shadow: n
 </div>
 
 <div class="footer">
-    <a href="https://instagram.com/notx_ayus" target="_blank" style="color: #fff; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 12px 25px; border-radius: 30px; text-decoration: none; font-size: 16px; font-weight: bold; display: inline-block; box-shadow: 0 5px 20px rgba(220, 39, 67, 0.5); margin-bottom: 20px; transition: 0.3s;">
+    <a href="https://instagram.com/notx_ayus" target="_blank" style="color: #fff; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); padding: 12px 20px; border-radius: 12px; text-decoration: none; font-weight: bold; display: inline-block;">
         📸 Contact on Instagram: @notx_ayus
     </a>
     <br>
@@ -162,15 +163,15 @@ button:disabled{opacity:0.5; cursor: not-allowed; transform: none; box-shadow: n
 // ==========================================
 const allServices = {
     instagram: [
-        { id: "views", rate: 2, names: { hi: "👁 व्यूज - ₹2/1000", en: "👁 Views - ₹2/1000", gu: "👁 વ્યુઝ - ₹2/1000", mr: "👁 व्यूज - ₹2/1000", pa: "👁 ਵਿਊਜ਼ - ₹2/1000", ta: "👁 பார்வைகள் - ₹2/1000" } },
-        { id: "followers", rate: 199, names: { hi: "🔥 फॉलोवर प्रीमियम - ₹199/1000", en: "🔥 Followers Premium - ₹199/1000", gu: "🔥 ફોલોવર્સ પ્રીમિયમ - ₹199/1000", mr: "🔥 फॉलोअर्स प्रीमियम - ₹199/1000", pa: "🔥 ਫਾਲੋਅਰ ਪ੍ਰੀਮੀਅਮ - ₹199/1000", ta: "🔥 பின்தொடரியாளர் பிரீமியம் - ₹199/1000" } },
-        { id: "followers_basic", rate: 99, names: { hi: "⭐ फॉलोवर्स बेसिक - ₹99/1000", en: "⭐ Followers Basic - ₹99/1000", gu: "⭐ ફોલોવર્સ બેઝિક - ₹99/1000", mr: "⭐ फॉलोअर्स बेसिक - ₹99/1000", pa: "⭐ ਫਾਲੋਅਰ ਬੇਸਿਕ - ₹99/1000", ta: "⭐ பின்தொடரியாளர் அடிப்படை - ₹99/1000" } },
-        { id: "likes", rate: 40, names: { hi: "❤️ लाइक्स - ₹40/1000", en: "❤️ Likes - ₹40/1000", gu: "❤️ લાઈક્સ - ₹40/1000", mr: "❤️ लाइक्स - ₹40/1000", pa: "❤️ ਲਾਈਕ - ₹40/1000", ta: "❤️ விருப்பங்கள் - ₹40/1000" } }
+        { id: "views", rate: 2, names: { hi: "👁 व्यूज - ₹2/1000", en: "👁 Views - ₹2/1000", gu: "👁 વ્યુઝ - ₹2/1000", mr: "👁 व्यूज - ₹2/1000", pa: "👁 ਵਿਊਜ - ₹2/1000", ta: "👁 வியூக்கள் - ₹2/1000" } },
+        { id: "followers", rate: 199, names: { hi: "🔥 फॉलोवर प्रीमियम - ₹199/1000", en: "🔥 Followers Premium - ₹199/1000", gu: "🔥 ફોલોવર્સ પ્રીમિયમ - ₹199/1000", mr: "🔥 फॉलोवर प्रीमियम - ₹199/1000", pa: "🔥 ਫੌਲੋਅਰਸ ਪ੍ਰੀਮੀਅਮ - ₹199/1000", ta: "🔥 பின்தொடர்பவர்கள் பிரீமியம் - ₹199/1000" } },
+        { id: "followers_basic", rate: 99, names: { hi: "⭐ फॉलोवर्स बेसिक - ₹99/1000", en: "⭐ Followers Basic - ₹99/1000", gu: "⭐ ફોલોવર્સ બેસિક - ₹99/1000", mr: "⭐ फॉलोवर्स बेसिक - ₹99/1000", pa: "⭐ ਫੌਲੋਅਰਸ ਬੇਸਿਕ - ₹99/1000", ta: "⭐ பின்தொடர்பவர்கள் அடிப்படை - ₹99/1000" } },
+        { id: "likes", rate: 40, names: { hi: "❤️ लाइक्स - ₹40/1000", en: "❤️ Likes - ₹40/1000", gu: "❤️ લાઈક્સ - ₹40/1000", mr: "❤️ लाइक्स - ₹40/1000", pa: "❤️ ਲਾਈਕਸ - ₹40/1000", ta: "❤️ பிடிப்புகள் - ₹40/1000" } },
     ],
     youtube: [
-        { id: "yt_views", rate: 150, names: { hi: "▶️ यूट्यूब व्यूज - ₹150/1000", en: "▶️ YouTube Views - ₹150/1000", gu: "▶️ યુટ્યુબ વ્યુઝ - ₹150/1000", mr: "▶️ यूट्यूब व्यूज - ₹150/1000", pa: "▶️ ਯੂਟਿਊਬ ਵਿਊਜ਼ - ₹150/1000", ta: "▶️ YouTube பார்வைகள் - ₹150/1000" } },
-        { id: "yt_subs", rate: 1500, names: { hi: "🔔 यूट्यूब सब्सक्राइबर्स - ₹1500/1000", en: "🔔 YouTube Subscribers - ₹1500/1000", gu: "🔔 યુટ્યુબ સબસ્ક્રાઇબર્સ - ₹1500/1000", mr: "🔔 यूट्यूब सबस्क्राइबर्स - ₹1500/1000", pa: "🔔 ਯੂਟਿਊਬ ਸਬਸਕ੍ਰਾਈਬਰ - ₹1500/1000", ta: "🔔 YouTube சந்தாதாரர்கள் - ₹1500/1000" } },
-        { id: "yt_likes", rate: 100, names: { hi: "👍 यूट्यूब लाइक्स - ₹100/1000", en: "👍 YouTube Likes - ₹100/1000", gu: "👍 યુટ્યુબ લાઈક્સ - ₹100/1000", mr: "👍 यूट्यूब लाइक्स - ₹100/1000", pa: "👍 ਯੂਟਿਊਬ ਲਾਈਕ - ₹100/1000", ta: "👍 YouTube விருப்பங்கள் - ₹100/1000" } }
+        { id: "yt_views", rate: 150, names: { hi: "▶️ यूट्यूब व्यूज - ₹150/1000", en: "▶️ YouTube Views - ₹150/1000", gu: "▶️ યુટ્યુબ વ્યુઝ - ₹150/1000", mr: "▶️ यूट्यूब व्यूज - ₹150/1000", pa: "▶️ ਯੂਟਿਊਬ ਵਿਊਜ - ₹150/1000", ta: "▶️ YouTube பாக்கங்கள் - ₹150/1000" } },
+        { id: "yt_subs", rate: 1500, names: { hi: "🔔 यूट्यूब सब्सक्राइबर्स - ₹1500/1000", en: "🔔 YouTube Subscribers - ₹1500/1000", gu: "🔔 યુટ્યુબ સબસ્ક્રાઇબર્સ - ₹1500/1000", mr: "🔔 यूट्यूब सबस्क्राइबर्स - ₹1500/1000", pa: "🔔 ਯੂਟਿਊਬ ਸਬਸਕ੍ਰਾਈਬਰਸ - ₹1500/1000", ta: "🔔 YouTube சந்தாதாரர்கள் - ₹1500/1000" } },
+        { id: "yt_likes", rate: 100, names: { hi: "👍 यूट्यूब लाइक्स - ₹100/1000", en: "👍 YouTube Likes - ₹100/1000", gu: "👍 યુટ્યુબ લાઈક્સ - ₹100/1000", mr: "👍 यूट्यूब लाइक्स - ₹100/1000", pa: "👍 ਯੂਟਿਊਬ ਲਾਈਕਸ - ₹100/1000", ta: "👍 YouTube பிடிப்புகள் - ₹100/1000" } },
     ]
 };
 
@@ -179,11 +180,11 @@ const allServices = {
 // ==========================================
 const trans = {
 hi: {notice:"🔥 भारत में सबसे सस्ता पैनल - सीमित ऑफर 🔥",title:"प्रीमियम बूस्ट पैनल",subtitle:"तेजी से बढ़ो • असली यूजर्स • तुरंत डिलीवरी 🚀",platformLabel:"🌐 कौन सा प्लेटफार्म?",platIg:"🟢 इंस्टाग्राम",platYt:"🔴 यूट्यूब",serviceLabel:"📱 कौन सी सेवा चाहिए?",urlLabel:"🔗 अपना पोस्ट/प्रोफाइल URL डालो",qtyLabel:"📊 कितनी मात्रा चाहिए?",paidLabel:"✅ मैंने QR से भुगतान कर दिया",qrBtnText:"💳 QR कोड से भुगतान करें",waBtnText:"📲 व्हाट्सएप पर ऑर्डर भेजो",qrTitle:"💳 UPI से भुगतान करें",qrDesc:"नीचे दिया गया QR कोड स्कैन करो",qrDirect:"या डायरेक्ट: +91 7250728059",stat1:"ऑर्डर",stat2:"यूजर्स",stat3:"सपोर्ट",featuresTitle:"✨ क्यों हमसे ऑर्डर करें?",feat1:"✔️ तुरंत डिलीवरी",feat2:"✔️ सबसे सस्ती कीमत",feat3:"✔️ पासवर्ड की जरूरत नहीं",feat4:"✔️ 100% सुरक्षित 🔒",faqTitle:"❓ FAQ",faq1:"Q: कितना समय? A: मिनटों में!",faq2:"Q: सुरक्षित? A: हाँ, 100% सुरक्षित!",footer:"⚠️ यह पैनल आधिकारिक नहीं है।",fakeMsg:"ने अभी ऑर्डर दिया! 🎉"},
-en: {notice:"🔥 Cheapest Panel in India - Limited Offer 🔥",title:"Premium Boost Panel",subtitle:"Grow Fast • Real Users • Instant Delivery 🚀",platformLabel:"🌐 Choose Platform?",platIg:"🟢 Instagram",platYt:"🔴 YouTube",serviceLabel:"📱 Which service?",urlLabel:"🔗 Enter Post/Profile URL",qtyLabel:"📊 How many?",paidLabel:"✅ I paid via QR",qrBtnText:"💳 Pay via QR",waBtnText:"📲 Send Order",qrTitle:"💳 Pay via UPI",qrDesc:"Scan QR below",qrDirect:"Or: +91 7250728059",stat1:"Orders",stat2:"Users",stat3:"Support",featuresTitle:"✨ Why Us?",feat1:"✔️ Instant Delivery",feat2:"✔️ Cheapest Price",feat3:"✔️ No Password",feat4:"✔️ 100% Safe 🔒",faqTitle:"❓ FAQ",faq1:"Q: Time? A: Minutes!",faq2:"Q: Safe? A: Yes!",footer:"⚠️ Not official panel",fakeMsg:"just placed an order! 🎉"},
-gu: {notice:"🔥 ભારતમાં સૌથી સસ્તો 🔥",title:"પ્રીમિયમ બુસ્ટ",subtitle:"વધો • અસલી યુઝર્સ",platformLabel:"🌐 પ્લેટફોર્મ?",platIg:"🟢 Instagram",platYt:"🔴 YouTube",serviceLabel:"📱 સેવા?",urlLabel:"🔗 URL",qtyLabel:"📊 કેટલું?",paidLabel:"✅ પેમેન્ટ થઈ",qrBtnText:"💳 QR પે",waBtnText:"📲 ભેજો",qrTitle:"💳 UPI",qrDesc:"QR સ્કેન",qrDirect:"નહીં તો: +91 7250728059",stat1:"ઓર્ડર",stat2:"યુઝર",stat3:"સપોર્ટ",featuresTitle:"✨ શા માટે?",feat1:"✔️ તાત્કાલિક",feat2:"✔️ સસ્તો",feat3:"✔️ પાસવર્ડ નહીં",feat4:"✔️ સુરક્ષિત 🔒",faqTitle:"❓ FAQ",faq1:"Q: સમય? A: મિનિટ!",faq2:"Q: સુરક્ષિત? A: હા!",footer:"⚠️ સત્તાવાર નથી",fakeMsg:"એ ઓર્ડર આપ્યો! 🎉"},
-mr: {notice:"🔥 भारतातील सर्वस्त 🔥",title:"प्रीमियम बूस्ट",subtitle:"वाढ • खरे यूजर्स",platformLabel:"🌐 प्लૅટफॉर्म?",platIg:"🟢 Instagram",platYt:"🔴 YouTube",serviceLabel:"📱 सेवा?",urlLabel:"🔗 URL",qtyLabel:"📊 किती?",paidLabel:"✅ पेमेंट थाली",qrBtnText:"💳 QR",waBtnText:"📲 पाठवा",qrTitle:"💳 UPI",qrDesc:"QR स्कॅन",qrDirect:"किंवा: +91 7250728059",stat1:"ऑर्डर",stat2:"यूजर",stat3:"सपोर्ट",featuresTitle:"✨ का?",feat1:"✔️ तात्कालिक",feat2:"✔️ सस्ता",feat3:"✔️ पासवर्ड नाही",feat4:"✔️ सुरक्षित 🔒",faqTitle:"❓ FAQ",faq1:"Q: वेळ? A: मिनिटे!",faq2:"Q: सुरक्षित? A: होय!",footer:"⚠️ अधिकृत नाही",fakeMsg:"ने ऑर्डर दिली! 🎉"},
-pa: {notice:"🔥 ਭਾਰਤ ਵਿੱਚ ਸਭ ਤੋਂ ਸਸਤਾ 🔥",title:"ਪ੍ਰੀਮੀਅਮ ਬੂਸਟ",subtitle:"ਵਧੋ • ਅਸਲ ਯੂਜ਼ਰ",platformLabel:"🌐 ਪਲੇਟਫਾਰਮ?",platIg:"🟢 Instagram",platYt:"🔴 YouTube",serviceLabel:"📱 ਸੇਵਾ?",urlLabel:"🔗 URL",qtyLabel:"📊 ਕਿੰਨਾ?",paidLabel:"✅ ਪੇ ਕੀਤਾ",qrBtnText:"💳 QR",waBtnText:"📲 ਭੇਜੋ",qrTitle:"💳 UPI",qrDesc:"QR ਸਕੈਨ",qrDirect:"ਨਹੀਂ ਤਾਂ: +91 7250728059",stat1:"ਆਰਡਰ",stat2:"ਯੂਜ਼ਰ",stat3:"ਸਹਾਇਤਾ",featuresTitle:"✨ ਕਿਉਂ?",feat1:"✔️ ਤਾਲੀ",feat2:"✔️ ਸਸਤਾ",feat3:"✔️ ਪਾਸ ਨਹੀਂ",feat4:"✔️ ਸੁਰੱਖਿਆ 🔒",faqTitle:"❓ FAQ",faq1:"Q: ਵੇਲਾ? A: ਮਿੰਟ!",faq2:"Q: ਸੁਰੱਖਿਆ? A: ਹਾਂ!",footer:"⚠️ ਅਧਿਕਾਰਤ ਨਹੀਂ",fakeMsg:"ਨੇ ਆਰਡਰ ਦਿੱਤਾ! 🎉"},
-ta: {notice:"🔥 இந்தியாவில் மிகவும் குறைந்த விலை 🔥",title:"பிரீமியம் பூஸ்ட்",subtitle:"வளர்ந்து • உண்மையான பயனர்",platformLabel:"🌐 தளம்?",platIg:"🟢 Instagram",platYt:"🔴 YouTube",serviceLabel:"📱 சேவை?",urlLabel:"🔗 URL",qtyLabel:"📊 எவ்வளவு?",paidLabel:"✅ பணம் செலுத்தினேன்",qrBtnText:"💳 QR",waBtnText:"📲 அனுப்பு",qrTitle:"💳 UPI",qrDesc:"QR ஸக்கேன் செய்",qrDirect:"அல்லது: +91 7250728059",stat1:"ஆர்டர்",stat2:"பயனர்",stat3:"ஆதரவு",featuresTitle:"✨ ஏன்?",feat1:"✔️ உடனடி",feat2:"✔️ குறைந்த விலை",feat3:"✔️ கடவுச்சொல் இல்லை",feat4:"✔️ பாதுகாப்பு 🔒",faqTitle:"❓ FAQ",faq1:"Q: நேரம்? A: நிமிடங்கள்!",faq2:"Q: பாதுகாப்பு? A: ஆம்!",footer:"⚠️ அதிகாரப்பூர்வமற்றது",fakeMsg:"ஆர்டர் செய்துள்ளார்! 🎉"}
+en: {notice:"🔥 Cheapest Panel in India - Limited Offer 🔥",title:"Premium Boost Panel",subtitle:"Grow Fast • Real Users • Instant Delivery 🚀",platformLabel:"🌐 Choose Platform?",platIg:"🟢 Instagram",platYt:"🔴 YouTube",serviceLabel:"📱 Which Service?",urlLabel:"🔗 Enter Your Post/Profile URL",qtyLabel:"📊 Quantity Needed?",paidLabel:"✅ I've paid via QR",qrBtnText:"💳 Pay via QR Code",waBtnText:"📲 Send Order on WhatsApp",qrTitle:"💳 Pay via UPI",qrDesc:"Scan the QR code below",qrDirect:"Or Direct: +91 7250728059",stat1:"Orders",stat2:"Users",stat3:"Support",featuresTitle:"✨ Why Order From Us?",feat1:"✔️ Instant Delivery",feat2:"✔️ Cheapest Price",feat3:"✔️ No Password Needed",feat4:"✔️ 100% Safe 🔒",faqTitle:"❓ FAQ",faq1:"Q: How long? A: In Minutes!",faq2:"Q: Safe? A: Yes, 100% Safe!",footer:"⚠️ This panel is not official.",fakeMsg:"just placed an order! 🎉"},
+gu: {notice:"🔥 ભારતમાં સૌથી સસ્તો 🔥",title:"પ્રીમિયમ બુસ્ટ",subtitle:"વધો • અસલી યુઝર્સ",platformLabel:"🌐 પ્લેટફોર્મ પસંદ કરો?",platIg:"🟢 ઇન્સ્ટાગ્રામ",platYt:"🔴 યુટ્યુબ",serviceLabel:"📱 સેવા પસંદ કરો?",urlLabel:"🔗 URL નાખો",qtyLabel:"📊 જથ્થો?",paidLabel:"✅ મેં QR થી ચુકવણી કરી",qrBtnText:"💳 QR થી ચુકવણી કરો",waBtnText:"📲 વ્હાટ્સઅપ",qrTitle:"💳 UPI થી ચુકવણી",qrDesc:"QR કોડ સ્કેન કરો",qrDirect:"અથવા: +91 7250728059",stat1:"ઓર્ડર",stat2:"યુઝર્સ",stat3:"સપોર્ટ",featuresTitle:"✨ શા માટે ઓર્ડર કરો?",feat1:"✔️ તુરંત",feat2:"✔️ સૌથી સસ્તું",feat3:"✔️ પાસવર્ડ નહીં",feat4:"✔️ 100% સુરક્ષિત 🔒",faqTitle:"❓ FAQ",faq1:"Q: કેટલો સમય? A: મિનિટમાં!",faq2:"Q: સુરક્ષિત? A: હા!",footer:"⚠️ આ પાનલ અધિકૃત નથી.",fakeMsg:"એ પણ ઓર્ડર આપી! 🎉"},
+mr: {notice:"🔥 भारतातील सर्वस्त 🔥",title:"प्रीमियम बूस्ट",subtitle:"वाढ • खरे यूजर्स",platformLabel:"🌐 प्लॅटफॉर्म निवडा?",platIg:"🟢 इंस्टाग्राम",platYt:"🔴 यूट्यूब",serviceLabel:"📱 सेवा निवडा?",urlLabel:"🔗 URL दाखल करा",qtyLabel:"📊 प्रमाण?",paidLabel:"✅ मी QR वर भरलं",qrBtnText:"💳 QR वरून भरा",waBtnText:"📲 व्हाट्सअँप",qrTitle:"💳 UPI वरून भरा",qrDesc:"QR कोड स्कॅन करा",qrDirect:"किंवा: +91 7250728059",stat1:"ऑर्डर",stat2:"यूजर्स",stat3:"सपोर्ट",featuresTitle:"✨ आमच्याकडून का ऑर्डर करा?",feat1:"✔️ तात्काळ",feat2:"✔️ सर्वस्त",feat3:"✔️ पासवर्ड नाही",feat4:"✔️ 100% सुरक्षित 🔒",faqTitle:"❓ FAQ",faq1:"Q: किती वेळ? A: मिनिटात!",faq2:"Q: सुरक्षित? A: होय!",footer:"⚠️ हा पॅनल अधिकृत नाही.",fakeMsg:"ने पण ऑर्डर दिला! 🎉"},
+pa: {notice:"🔥 ਭਾਰਤ ਵਿੱਚ ਸਭ ਤੋਂ ਸਸਤਾ 🔥",title:"ਪ੍ਰੀਮੀਅਮ ਬੂਸਟ",subtitle:"ਵਧੋ • ਅਸਲ ਯੂਜ਼ਰ",platformLabel:"🌐 ਪਲੇਟਫਾਰਮ ਚੁਣੋ?",platIg:"🟢 ਇੰਸਟਾਗ੍ਰਾਮ",platYt:"🔴 ਯੂਟਿਊਬ",serviceLabel:"📱 ਸੇਵਾ ਚੁਣੋ?",urlLabel:"🔗 URL ਭਰੋ",qtyLabel:"📊 ਮਾਤਰਾ?",paidLabel:"✅ ਮੈਂ QR ਤੋਂ ਭੁਗਤਾਨ ਕੀਤਾ",qrBtnText:"💳 QR ਤੋਂ ਭੁਗਤਾਨ",waBtnText:"📲 ਵ੍ਹਾਟਸਅਪ",qrTitle:"💳 UPI ਤੋਂ ਭੁਗਤਾਨ",qrDesc:"QR ਕੋਡ ਸਕੈਨ ਕਰੋ",qrDirect:"ਜਾਂ: +91 7250728059",stat1:"ਆਰਡਰ",stat2:"ਯੂਜ਼ਰ",stat3:"ਸਪੋਰਟ",featuresTitle:"✨ ਆਪਣੇ ਕੋਲੋਂ ਕਿਉਂ ਆਰਡਰ ਕਰੋ?",feat1:"✔️ ਤੁਰੰਤ",feat2:"✔️ ਸਭ ਤੋਂ ਸਸਤਾ",feat3:"✔️ ਪਾਸਵਰਡ ਨਹੀਂ",feat4:"✔️ 100% ਸੁਰਖਿਅਤ 🔒",faqTitle:"❓ FAQ",faq1:"Q: ਕਿੰਨਾ ਸਮਾਂ? A: ਮਿੰਟਾਂ ਵਿੱਚ!",faq2:"Q: ਸੁਰਖਿਅਤ? A: ਹਾਂ!",footer:"⚠️ ਇਹ ਪੈਨਲ ਸਰਕਾਰੀ ਨਹੀਂ ਹੈ।",fakeMsg:"ਨੇ ਵੀ ਆਰਡਰ ਦਿੱਤਾ! 🎉"},
+ta: {notice:"🔥 இந்தியாவில் மிகவும் குறைந்த விலை 🔥",title:"பிரீமியம் பூஸ்ட்",subtitle:"வளர்ந்து செல்லுங்கள் • உண்மையான பயனர்கள்",platformLabel:"🌐 மंच் தேர்வு செய்யவும்?",platIg:"🟢 இன்ஸ்டாக்ராம்",platYt:"🔴 யூட்யூப்",serviceLabel:"📱 சேவை தேர்வு செய்யவும்?",urlLabel:"🔗 URL உள்ளிடவும்",qtyLabel:"📊 அளவு?",paidLabel:"✅ QR இலிருந்து பணம் கொடுத்தேன்",qrBtnText:"💳 QR இலிருந்து பணம் கொடுங்கள்",waBtnText:"📲 WhatsApp",qrTitle:"💳 UPI இலிருந்து பணம் கொடுங்கள்",qrDesc:"QR குறியீட்டை ஸ্கேன் செய்யவும்",qrDirect:"அல்லது: +91 7250728059",stat1:"ஆர்டர்கள்",stat2:"பயனர்கள்",stat3:"ஆதரவு",featuresTitle:"✨ ஏன் நாங்களிடம் ஆர்டர் செய்ய வேண்டும்?",feat1:"✔️ உடனடி",feat2:"✔️ மிகக் குறைந்த விலை",feat3:"✔️ கடவுச்சொல் இல்லை",feat4:"✔️ 100% பாதுகாப்பு 🔒",faqTitle:"❓ FAQ",faq1:"Q: எவ்வளவு நேரம்? A: நிமிடங்களில்!",faq2:"Q: பாதுகாப்பு? A: ஆம்!",footer:"⚠️ இந்த பேனல் அதிகாரப்பூர்வமாக இல்லை.",fakeMsg:"ஆர்டர் கொடுத்தார்! 🎉"}
 };
 
 let currentLang = 'hi';
